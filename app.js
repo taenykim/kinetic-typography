@@ -34,6 +34,9 @@ class App {
 
     this.stage = new PIXI.Container();
 
+    /**
+     * Filter
+     */
     const blurFilter = new PIXI.filters.BlurFilter();
     blurFilter.blur = 10;
     blurFilter.autoFit = true;

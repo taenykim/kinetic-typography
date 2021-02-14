@@ -1,12 +1,12 @@
-// const FRICTION = 0.86;
-const FRICTION = 0.98;
+const FRICTION = 0.86;
+// const FRICTION = 0.98;
 const MOVE_SPEED = 0.1;
 
 export class Particle {
   constructor(pos, texture) {
     this.sprite = new PIXI.Sprite(texture);
     this.sprite.scale.set(0.2);
-    // this.sprite.tint = 0x000000;
+    this.sprite.tint = 0x000000;
 
     this.savedX = pos.x;
     this.savedY = pos.y;
@@ -20,10 +20,8 @@ export class Particle {
   }
 
   draw() {
-    // this.vx += (this.savedX - this.x) * MOVE_SPEED;
-    // this.xy += (this.savedY - this.y) * MOVE_SPEED;
-    this.x += (this.savedX - this.x) * MOVE_SPEED;
-    this.y += (this.savedY - this.y) * MOVE_SPEED;
+    this.vx += (this.savedX - this.x) * MOVE_SPEED;
+    this.vy += (this.savedY - this.y) * MOVE_SPEED;
 
     this.vx *= FRICTION;
     this.vy *= FRICTION;
