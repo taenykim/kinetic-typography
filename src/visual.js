@@ -1,5 +1,6 @@
 import { Text } from "./text.js";
 import { Particle } from "./particle.js";
+import * as PIXI from "pixi.js";
 
 export class Visual {
   constructor() {
@@ -23,7 +24,7 @@ export class Visual {
       stage.removeChild(this.container);
     }
 
-    this.pos = this.text.setText("JEJU", 2, stageWidth, stageHeight);
+    this.pos = this.text.setText("R", 2, stageWidth, stageHeight);
 
     this.container = new PIXI.ParticleContainer(this.pos.length, {
       vertices: false,

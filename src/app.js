@@ -1,6 +1,7 @@
 import { Visual } from "./visual.js";
+import * as PIXI from "pixi.js";
 
-class App {
+export default class App {
   // renderer . pixi renderer *** canvas ctx=webgl element *** 렌더
   // stage . pixi container *** 필터등록
   // visual . custom *** 애니메이트

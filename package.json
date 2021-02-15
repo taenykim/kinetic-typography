@@ -1,0 +1,30 @@
+{
+  "name": "kinetictypo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "babel-loader": "^8.2.2",
+    "pixi.js": "^5.3.7",
+    "source-map-loader": "^2.0.1",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack",
+    "dev": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taenykim/kinetic-series.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taenykim/kinetic-series/issues"
+  },
+  "homepage": "https://github.com/taenykim/kinetic-series#readme"
+}

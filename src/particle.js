@@ -1,3 +1,5 @@
+import * as PIXI from "pixi.js";
+
 const FRICTION = 0.86;
 // const FRICTION = 0.98;
 const MOVE_SPEED = 0.1;
