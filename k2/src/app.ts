@@ -14,7 +14,6 @@ export default class App {
     this.renderRenderer();
 
     this.initStage();
-    this.addFilterToStage();
 
     this.initVisual();
 
@@ -33,7 +32,7 @@ export default class App {
       resolution: window.devicePixelRatio > 1 ? 2 : 1,
       autoDensity: true,
       powerPreference: "high-performance",
-      backgroundColor: 0xff4338,
+      backgroundColor: 0xffffff,
     });
   }
 
@@ -43,46 +42,6 @@ export default class App {
 
   initStage() {
     this.stage = new PIXI.Container();
-  }
-
-  addFilterToStage() {
-    const blurFilter = new PIXI.filters.BlurFilter();
-    blurFilter.blur = 10;
-    blurFilter.autoFit = true;
-
-    const fragSource = `
-      precision mediump float;
-      varying vec2 vTextureCoord;
-      uniform sampler2D uSampler;
-      uniform float threshold;
-      uniform float mr;
-      uniform float mg;
-      uniform float mb;
-      void main(void) {
-        vec4 color = texture2D(uSampler, vTextureCoord);
-        vec3 mcolor = vec3(mr, mg, mb);
-        if(color.a > threshold) {
-          gl_FragColor = vec4(mcolor, 1.0);
-        } else {
-          gl_FragColor = vec4(vec3(0.0), 0.0);
-        }
-      }
-    `;
-
-    const uniformsData = {
-      threshold: 0.5,
-      mr: 244.0 / 255.0,
-      mg: 193.0 / 255.0,
-      mb: 41.0 / 255.0,
-    };
-
-    const thresholdFilter = new PIXI.Filter(
-      undefined,
-      fragSource,
-      uniformsData
-    );
-    this.stage.filters = [blurFilter, thresholdFilter];
-    this.stage.filterArea = this.renderer.screen;
   }
 
   initVisual() {

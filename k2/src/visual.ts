@@ -47,7 +47,7 @@ export class Visual {
       position: true,
       rotation: false,
       uvs: false,
-      tint: false,
+      tint: true, // this!
     });
     stage.addChild(this.container);
 
@@ -75,9 +75,10 @@ export class Visual {
         const ay = ty - this.mouse.y;
         item.vx -= ax;
         item.vy -= ay;
+        item.collide();
       }
 
-      item.draw();
+      item.draw(i);
     }
   }
 
