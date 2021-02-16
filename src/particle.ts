@@ -1,11 +1,21 @@
 import * as PIXI from "pixi.js";
+import { ParticlePos } from "./text";
 
 const FRICTION = 0.86;
-// const FRICTION = 0.98;
 const MOVE_SPEED = 0.1;
 
 export class Particle {
-  constructor(pos, texture) {
+  sprite: PIXI.Sprite;
+
+  savedX: number;
+  savedY: number;
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  radius: number;
+
+  constructor(pos: ParticlePos, texture: PIXI.Texture) {
     this.sprite = new PIXI.Sprite(texture);
     this.sprite.scale.set(0.2);
     this.sprite.tint = 0x000000;

@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   mode: "development", // ['development', 'production']
-  entry: "./src/index.js",
+  entry: "./src/index.ts",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index.js", // chunk시, [name][hash].js
@@ -11,8 +11,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: "babel-loader",
+        test: /\.ts$/,
+        use: "ts-loader",
         exclude: /node_modules/,
       },
       {
@@ -24,7 +24,7 @@ module.exports = {
   },
   resolve: {
     modules: [path.join(__dirname, "src"), "node_modules"],
-    extensions: [".js"],
+    extensions: [".ts", ".js"],
   },
   externals: {},
   target: "web", // ['web', 'webworker', 'node', async-node', 'electron']

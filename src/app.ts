@@ -1,32 +1,30 @@
-import { Visual } from "./visual.js";
+import { Visual } from "./visual";
 import * as PIXI from "pixi.js";
 
 export default class App {
-  // renderer . pixi renderer *** canvas ctx=webgl element *** 렌더
-  // stage . pixi container *** 필터등록
-  // visual . custom *** 애니메이트
-  // stageWidth
-  // stageHeight
-  //
+  renderer!: PIXI.Renderer;
+  stage!: PIXI.Container;
+  visual!: Visual;
+
+  stageWidth!: number;
+  stageHeight!: number;
+
   constructor() {
-    this.setWebgl();
+    this.initRenderer();
+    this.renderRenderer();
 
-    WebFont.load({
-      google: {
-        families: ["Hind:700"],
-      },
-      fontactive: () => {
-        this.visual = new Visual();
+    this.initStage();
+    this.addFilterToStage();
 
-        window.addEventListener("resize", this.resize.bind(this), false);
-        this.resize();
+    this.initVisual();
 
-        requestAnimationFrame(this.animate.bind(this));
-      },
-    });
+    window.addEventListener("resize", this.resize.bind(this), false);
+    this.resize();
+
+    requestAnimationFrame(this.animate.bind(this));
   }
 
-  setWebgl() {
+  initRenderer() {
     this.renderer = new PIXI.Renderer({
       width: document.body.clientWidth,
       height: document.body.clientHeight,
@@ -34,16 +32,20 @@ export default class App {
       transparent: false,
       resolution: window.devicePixelRatio > 1 ? 2 : 1,
       autoDensity: true,
-      powerPerference: "high-performance",
+      powerPreference: "high-performance",
       backgroundColor: 0xff4338,
     });
+  }
+
+  renderRenderer() {
     document.body.appendChild(this.renderer.view);
+  }
 
+  initStage() {
     this.stage = new PIXI.Container();
+  }
 
-    /**
-     * Filter
-     */
+  addFilterToStage() {
     const blurFilter = new PIXI.filters.BlurFilter();
     blurFilter.blur = 10;
     blurFilter.autoFit = true;
@@ -74,9 +76,17 @@ export default class App {
       mb: 41.0 / 255.0,
     };
 
-    const thresholdFilter = new PIXI.Filter(null, fragSource, uniformsData);
+    const thresholdFilter = new PIXI.Filter(
+      undefined,
+      fragSource,
+      uniformsData
+    );
     this.stage.filters = [blurFilter, thresholdFilter];
     this.stage.filterArea = this.renderer.screen;
+  }
+
+  initVisual() {
+    this.visual = new Visual();
   }
 
   resize() {
@@ -88,7 +98,7 @@ export default class App {
     this.visual.show(this.stageWidth, this.stageHeight, this.stage);
   }
 
-  animate(t) {
+  animate() {
     requestAnimationFrame(this.animate.bind(this));
 
     this.visual.animate();
@@ -96,7 +106,3 @@ export default class App {
     this.renderer.render(this.stage);
   }
 }
-
-window.onload = () => {
-  new App();
-};

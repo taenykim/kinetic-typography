@@ -1,8 +1,24 @@
-import { Text } from "./text.js";
-import { Particle } from "./particle.js";
+import { Text, ParticlePos } from "./text";
+import { Particle } from "./particle";
 import * as PIXI from "pixi.js";
 
+export interface Mouse {
+  x: number;
+  y: number;
+  radius: number;
+}
+
 export class Visual {
+  text: Text;
+  texture: PIXI.Texture;
+
+  mouse: Mouse;
+
+  container!: PIXI.ParticleContainer;
+
+  particles: Particle[];
+  pos!: ParticlePos[];
+
   constructor() {
     this.text = new Text();
 
@@ -19,7 +35,7 @@ export class Visual {
     document.addEventListener("pointermove", this.onMove.bind(this), false);
   }
 
-  show(stageWidth, stageHeight, stage) {
+  show(stageWidth: number, stageHeight: number, stage: PIXI.Container) {
     if (this.container) {
       stage.removeChild(this.container);
     }
@@ -30,7 +46,6 @@ export class Visual {
       vertices: false,
       position: true,
       rotation: false,
-      scale: false,
       uvs: false,
       tint: false,
     });
@@ -66,7 +81,7 @@ export class Visual {
     }
   }
 
-  onMove(e) {
+  onMove(e: PointerEvent) {
     this.mouse.x = e.clientX;
     this.mouse.y = e.clientY;
   }
