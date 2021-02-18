@@ -1,7 +1,7 @@
 import { ParticlePos } from "./text";
 import { RANDOM_TEXT } from "./visual";
 
-const FRICTION = 0.98;
+const FRICTION = 0.72;
 const COLOR_SPEED = 0.12;
 
 export class Particle {
