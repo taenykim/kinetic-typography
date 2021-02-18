@@ -78,7 +78,7 @@ export class Visual {
         item.collide();
       }
 
-      item.draw(i);
+      item.draw();
     }
   }
 

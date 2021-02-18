@@ -41,7 +41,7 @@ export class Particle {
     this.rgb = 0x451966;
   }
 
-  draw(i: number) {
+  draw() {
     this.rgb += (this.savedRgb - this.rgb) * COLOR_SPEED;
 
     this.x += (this.savedX - this.x) * MOVE_SPEED;
