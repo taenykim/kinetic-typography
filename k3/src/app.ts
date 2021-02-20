@@ -1,5 +1,4 @@
 import { Visual } from "./visual";
-import * as PIXI from "pixi.js";
 
 export default class App {
   canvas!: HTMLCanvasElement;

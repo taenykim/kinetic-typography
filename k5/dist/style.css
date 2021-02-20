@@ -1,0 +1,32 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: black;
+}
+
+ul {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  display: flex;
+  transform: translate(-50%, 0);
+}
+
+ul li {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin: 0 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+ul li.selected {
+  border: 4px solid #ffffff;
+}
+
+ul li img {
+  width: 100%;
+  height: 100%;
+}
