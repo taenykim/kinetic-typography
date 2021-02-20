@@ -92,7 +92,7 @@ export default class App {
     this.canvas.height = this.stageHeight * this.pixelRatio;
     this.ctx.scale(this.pixelRatio, this.pixelRatio);
 
-    this.pos = this.text.setText("M", 6, this.stageWidth, this.stageHeight);
+    this.pos = this.text.setText("T", 6, this.stageWidth, this.stageHeight);
   }
 
   animate(t: number) {
