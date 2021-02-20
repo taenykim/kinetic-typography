@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm run k1 & npm run k2 & npm run k3 & npm run k4 & npm run k5 & npm run k6 & npm run k7",
     "k1": "cd k1 && PORT=8081 npm run dev",
     "k2": "cd k2 && PORT=8082 npm run dev",
     "k3": "cd k3 && PORT=8083 npm run dev",
