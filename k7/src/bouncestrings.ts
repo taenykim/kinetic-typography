@@ -40,21 +40,6 @@ export class BounceString {
   }
 
   animate(ctx: CanvasRenderingContext2D, moveX: number, moveY: number) {
-    ctx.beginPath();
-    ctx.fillStyle = "#00ff00";
-    ctx.arc(moveX, moveY, 6, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.fillStyle = "#0000ff";
-    ctx.arc(this.points[0].x, this.points[0].y, 6, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.fillStyle = "#ff0000";
-    ctx.arc(this.points[2].x, this.points[2].y, 6, 0, Math.PI * 2);
-    ctx.fill();
-
     this.rgb += (this.saveRgb - this.rgb) * 0.12;
 
     const red = ((this.rgb >> 16) & 0xff) | 0;
