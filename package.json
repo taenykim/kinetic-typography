@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "k1": "cd k1 && PORT=8081 npm run dev",
-    "k2": "cd k1 && PORT=8082 npm run dev",
-    "k3": "cd k1 && PORT=8083 npm run dev",
-    "k4": "cd k1 && PORT=8084 npm run dev",
-    "k5": "cd k1 && PORT=8085 npm run dev",
-    "k6": "cd k1 && PORT=8086 npm run dev",
-    "k7": "cd k1 && PORT=8087 npm run dev"
+    "k2": "cd k2 && PORT=8082 npm run dev",
+    "k3": "cd k3 && PORT=8083 npm run dev",
+    "k4": "cd k4 && PORT=8084 npm run dev",
+    "k5": "cd k5 && PORT=8085 npm run dev",
+    "k6": "cd k6 && PORT=8086 npm run dev",
+    "k7": "cd k7 && PORT=8087 npm run dev"
   },
   "repository": {
     "type": "git",
