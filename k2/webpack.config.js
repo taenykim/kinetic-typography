@@ -36,7 +36,7 @@ module.exports = {
     publicPath: "/",
     host: "localhost",
     overlay: true,
-    port: 8080,
+    port: process.env.PORT,
     stats: "errors-only",
   },
 };
