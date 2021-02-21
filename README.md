@@ -6,15 +6,15 @@ original resource : https://www.youtube.com/watch?v=HMQ9fEX28fk
 
 ## result
 
-| k1(pixi.js) : fluid         | k2(pixi.js) : particle      |
-| --------------------------- | --------------------------- |
-| <img src='./images/1.gif'/> | <img src='./images/2.gif'/> |
-| k3 : destroy                | k4 : glow                   |
-| <img src='./images/3.gif'/> | <img src='./images/4.gif'/> |
-| k5 : thread                 | k6(pixi.js) : cloth         |
-| <img src='./images/5.gif'/> | <img src='./images/6.gif'/> |
-| k7 : string                 |                             |
-| <img src='./images/7.gif'/> |                             |
+| k1(pixi.js) : fluid                        | k2(pixi.js) : particle                            |
+| ------------------------------------------ | ------------------------------------------------- |
+| <img src='./images/1.gif'/>                | <img src='./images/2.gif'/>                       |
+| <div align='center'>**k3 : destroy**</div> | <div align='center'>**k4 : glow**</div>           |
+| <img src='./images/3.gif'/>                | <img src='./images/4.gif'/>                       |
+| <div align='center'>**k5 : thread**</div>  | <div align='center'>**k6(pixi.js) : cloth**</div> |
+| <img src='./images/5.gif'/>                | <img src='./images/6.gif'/>                       |
+| <div align='center'>**k7 : string**</div>  |                                                   |
+| <img src='./images/7.gif'/>                |                                                   |
 
 ## how to use
 
@@ -35,7 +35,3 @@ npm run k5
 npm run k6
 npm run k7
 ```
-
-## review
-
--
